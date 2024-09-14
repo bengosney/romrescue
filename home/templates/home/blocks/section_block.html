@@ -1,0 +1,5 @@
+{% load wagtailcore_tags %}
+
+<section id="section-{{ self.navigation_title|slugify }}">
+    {% include_block self.body %}
+</section>
