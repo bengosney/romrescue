@@ -26,6 +26,10 @@ if settings.DEBUG:
 
     urlpatterns += debug_toolbar_urls()
 
+    urlpatterns += [
+        path("__reload__/", include("django_browser_reload.urls")),
+    ]
+
 urlpatterns = urlpatterns + [
     # For anything not caught by a more specific rule above, hand over to
     # Wagtail's page serving mechanism. This should be the last pattern in

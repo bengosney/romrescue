@@ -1,0 +1,8 @@
+{
+  "name": "romrescue",
+  "version": "1.0.0",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "lightningcss-cli": "^1.27.0"
+  }
+}

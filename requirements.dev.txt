@@ -9,6 +9,7 @@ asgiref==3.8.1 \
     --hash=sha256:c343bd80a0bec947a9860adb4c432ffa7db769836c64238fc34bdc3fec84d590
     # via
     #   django
+    #   django-browser-reload
     #   django-stubs
 asttokens==2.4.1 \
     --hash=sha256:051ed49c3dcae8913ea7cd08e46a606dba30b79993209636c4875bc1d637bc24 \
@@ -142,6 +143,7 @@ django==5.1.1 \
     --hash=sha256:021ffb7fdab3d2d388bc8c7c2434eb9c1f6f4d09e6119010bbb1694dda286bc2 \
     --hash=sha256:71603f27dac22a6533fb38d83072eea9ddb4017fead6f67f2562a40402d61c3f
     # via
+    #   django-browser-reload
     #   django-debug-toolbar
     #   django-filter
     #   django-modelcluster
@@ -153,10 +155,14 @@ django==5.1.1 \
     #   djangorestframework
     #   laces
     #   wagtail
+django-browser-reload==1.15.0 \
+    --hash=sha256:55b72335568b988e3a2beddb1703db6951516355925d3fc9c587f0bbd9e8efaa \
+    --hash=sha256:ed094386c587a95ff4f34a0d302ecd58f15e919784c4c76a97f7cb977446104c
+    # via romrescue (pyproject.toml)
 django-debug-toolbar==4.4.6 \
     --hash=sha256:36e421cb908c2f0675e07f9f41e3d1d8618dc386392ec82d23bcfcd5d29c7044 \
     --hash=sha256:3beb671c9ec44ffb817fad2780667f172bd1c067dbcabad6268ce39a81335f45
-    # via project-name (pyproject.toml)
+    # via romrescue (pyproject.toml)
 django-filter==24.3 \
     --hash=sha256:c4852822928ce17fb699bcfccd644b3574f1a2d80aeb2b4ff4f16b02dd49dc64 \
     --hash=sha256:d8ccaf6732afd21ca0542f6733b11591030fa98669f8d15599b358e24a2cd9c3
@@ -172,7 +178,7 @@ django-permissionedforms==0.1 \
 django-stubs==5.0.4 \
     --hash=sha256:78e3764488fdfd2695f12502136548ec22f8d4b1780541a835042b8238d11514 \
     --hash=sha256:c2502f5ecbae50c68f9a86d52b5b2447d8648fd205036dad0ccb41e19a445927
-    # via project-name (pyproject.toml)
+    # via romrescue (pyproject.toml)
 django-stubs-ext==5.0.4 \
     --hash=sha256:85da065224204774208be29c7d02b4482d5a69218a728465c2fbe41725fdc819 \
     --hash=sha256:910cbaff3d1e8e806a5c27d5ddd4088535aae8371ea921b7fd680fdfa5f14e30
@@ -212,7 +218,7 @@ filetype==1.2.0 \
 icecream==2.1.3 \
     --hash=sha256:0aa4a7c3374ec36153a1d08f81e3080e83d8ac1eefd97d2f4fe9544e8f9b49de \
     --hash=sha256:757aec31ad4488b949bc4f499d18e6e5973c40cc4d4fc607229e78cfaec94c34
-    # via project-name (pyproject.toml)
+    # via romrescue (pyproject.toml)
 identify==2.6.0 \
     --hash=sha256:cb171c685bdc31bcc4c1734698736a7d5b6c8bf2e0c15117f4d469c8640ae5cf \
     --hash=sha256:e79ae4406387a9d300332b5fd366d8994f1525e8414984e1a59e058b2eda2dd0
@@ -257,7 +263,7 @@ mypy==1.11.2 \
     --hash=sha256:edb91dded4df17eae4537668b23f0ff6baf3707683734b6a818d5b9d0c0c31a1 \
     --hash=sha256:ee23de8530d99b6db0573c4ef4bd8f39a2a6f9b60655bf7a1357e585a3486f2b \
     --hash=sha256:f7821776e5c4286b6a13138cc935e2e9b6fde05e081bdebf5cdb2bb97c9df81d
-    # via project-name (pyproject.toml)
+    # via romrescue (pyproject.toml)
 mypy-extensions==1.0.0 \
     --hash=sha256:4392f6c0eb8a5668a69e23d168ffa70f0be9ccfd32b5cc2d26a34ae5b844552d \
     --hash=sha256:75dbf8955dc00442a438fc4d0666508a9a97b6bd41aa2f0ffe9d2f2725af0782
@@ -419,7 +425,7 @@ pip==24.2 \
 pip-tools==7.4.1 \
     --hash=sha256:4c690e5fbae2f21e87843e89c26191f0d9454f362d8acdbd695716493ec8b3a9 \
     --hash=sha256:864826f5073864450e24dbeeb85ce3920cdfb09848a3d69ebf537b521f14bcc9
-    # via project-name (pyproject.toml)
+    # via romrescue (pyproject.toml)
 platformdirs==4.3.2 \
     --hash=sha256:9e5e27a08aa095dd127b9f2e764d74254f482fef22b0970773bfba79d091ab8c \
     --hash=sha256:eb1c8582560b34ed4ba105009a4badf7f6f85768b30126f351328507b2beb617
@@ -427,7 +433,7 @@ platformdirs==4.3.2 \
 pre-commit==3.8.0 \
     --hash=sha256:8bb6494d4a20423842e198980c9ecf9f96607a07ea29549e180eef9ae80fe7af \
     --hash=sha256:9a90a53bf82fdd8778d58085faf8d83df56e40dfe18f45b19446e26bf1b3a63f
-    # via project-name (pyproject.toml)
+    # via romrescue (pyproject.toml)
 pygments==2.18.0 \
     --hash=sha256:786ff802f32e91311bff3889f6e9a86e81505fe99f2735bb6d60ae0c5004f199 \
     --hash=sha256:b8e6aca0523f3ab76fee51799c488e38782ac06eafcf95e7ba832985c8e7b13a
@@ -522,7 +528,7 @@ ruff==0.6.4 \
     --hash=sha256:d02a4127a86de23002e694d7ff19f905c51e338c72d8e09b56bfb60e1681724f \
     --hash=sha256:eebe4ff1967c838a1a9618a5a59a3b0a00406f8d7eefee97c70411fefc353617 \
     --hash=sha256:f0f8968feea5ce3777c0d8365653d5e91c40c31a81d95824ba61d871a11b8523
-    # via project-name (pyproject.toml)
+    # via romrescue (pyproject.toml)
 setuptools==74.1.2 \
     --hash=sha256:5f4c08aa4d3ebcb57a50c33b1b07e94315d7fc7230f7115e47fc99776c8ce308 \
     --hash=sha256:95b40ed940a1c67eb70fc099094bd6e99c6ee7c23aa2306f4d2697ba7916f9c6
@@ -569,7 +575,7 @@ virtualenv==20.26.4 \
 wagtail==6.2.1 \
     --hash=sha256:0f136ef23b157997a44fa46543a320a31437350951cf13add8ea8b69cc5e8385 \
     --hash=sha256:31d073ea8acdc973ef45c5719977a1bb122ad0fc3f01348f37e922128200b42a
-    # via project-name (pyproject.toml)
+    # via romrescue (pyproject.toml)
 wheel==0.44.0 \
     --hash=sha256:2376a90c98cc337d18623527a97c31797bd02bad0033d41547043a1cbfbe448f \
     --hash=sha256:a29c3f2817e95ab89aa4660681ad547c0e9547f20e75b0562fe7723c9a2a9d49

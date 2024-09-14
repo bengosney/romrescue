@@ -1,4 +1,4 @@
-.PHONY: help clean test install all init dev
+.PHONY: help clean test install all init css assets watch
 .DEFAULT_GOAL := install
 .PRECIOUS: requirements.%.in
 
@@ -11,6 +11,10 @@ UV_PATH:=.direnv/python-$(PYTHON_VERSION)/bin/uv
 PIP_PATH:=.direnv/python-$(PYTHON_VERSION)/bin/pip
 WHEEL_PATH:=.direnv/python-$(PYTHON_VERSION)/bin/wheel
 PRE_COMMIT_PATH:=.direnv/python-$(PYTHON_VERSION)/bin/pre-commit
+
+CSS_INPUTS:=$(wildcard assets/css/*.css)
+CSS_OUTPUTS:=$(patsubst assets/css/%.css,romrescue/static/css/%.min.css,$(CSS_INPUTS))
+ALL_CSS:=$(shell find assets/css -type f -name '*.css')
 
 help: ## Display this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
@@ -77,6 +81,25 @@ clean: ## Remove all build files
 reset:
 	rm -rf pyproject.toml src uv.lock .pre-commit-config.yaml requirements*.txt .gitignore .venv
 
-install: $(UV_PATH) requirements.txt $(REQS) ## Install development requirements (default)
+node_modules: package.json package-lock.json
+	npm install
+
+romrescue/static/css/%.min.css: assets/css/%.css $(ALL_CSS)
+	npx lightningcss --minify --bundle --targets ">= 0.25%" $< -o $@
+
+css: $(CSS_OUTPUTS)
+
+assets: css ## Build assets
+
+install: installpython node_modules
+
+installpython: $(UV_PATH) requirements.txt $(REQS) ## Install development requirements (default)
 	@echo "Installing $(filter-out $<,$^)"
 	$(UV_PATH) pip sync $(filter-out $<,$^)
+
+watch: ## Watch assets for changes
+	@echo "Watching assets"
+	$(MAKE) assets
+	@while inotifywait -qr -e close_write assets; do \
+		$(MAKE) assets; \
+	done

@@ -5,6 +5,7 @@ repos:
   hooks:
   - id: trailing-whitespace
   - id: end-of-file-fixer
+    exclude: .+\.min\.(css|js)
   - id: check-yaml
   - id: check-json
   - id: check-toml
@@ -12,8 +13,6 @@ repos:
   - id: check-merge-conflict
   - id: detect-aws-credentials
   - id: detect-private-key
-  - id: file-contents-sorter
-    files: requirements.*\.in
   - id: mixed-line-ending
     args: [--fix, lf]
 - repo: https://github.com/asottile/pyupgrade
@@ -49,3 +48,9 @@ repos:
   rev: 2.2.3
   hooks:
   - id: pyproject-fmt
+- repo: https://github.com/pre-commit/mirrors-prettier
+  rev: v4.0.0-alpha.8
+  hooks:
+  - id: prettier
+    types_or: [css, javascript]
+    exclude: .min.

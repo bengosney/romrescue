@@ -347,7 +347,7 @@ urllib3==2.2.2 \
 wagtail==6.2.1 \
     --hash=sha256:0f136ef23b157997a44fa46543a320a31437350951cf13add8ea8b69cc5e8385 \
     --hash=sha256:31d073ea8acdc973ef45c5719977a1bb122ad0fc3f01348f37e922128200b42a
-    # via project-name (pyproject.toml)
+    # via romrescue (pyproject.toml)
 willow==1.8.0 \
     --hash=sha256:48ccf5ce48ccd29c37a32497cd7af50983f8570543c4de2988b15d583efc66be \
     --hash=sha256:ef3df6cde80d4914e719188147bef1d71c240edb118340e0c5957ecc8fe08315
