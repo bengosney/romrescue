@@ -19,6 +19,7 @@ dependencies = [ "wagtail" ]
 optional-dependencies.dev = [
   "django-browser-reload",
   "django-debug-toolbar",
+  "django-extensions",
   "django-stubs",
   "icecream",
   "mypy",

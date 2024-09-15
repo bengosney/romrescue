@@ -5,7 +5,7 @@ from wagtail.models import Page
 
 from dogs.blocks import DogListBlock
 
-from .blocks import SectionBlock
+from .blocks import SectionBlock, TitleBlock
 
 
 class HomePage(Page):
@@ -15,6 +15,7 @@ class HomePage(Page):
                 "Section",
                 SectionBlock(
                     [
+                        ("SiteTitle", TitleBlock()),
                         ("Paragraph", blocks.RichTextBlock()),
                         ("Dogs", DogListBlock()),
                     ]

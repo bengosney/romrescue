@@ -1,13 +1,33 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags static custom_urls %}
 
 {% block body_class %}template-homepage{% endblock %}
 
 {% block content %}
-    {% for block in page.content %}
-        <section>
-            {% include_block block %}
-        </section>
-    {% endfor %}
+    <div class="container">
+        <div class="nav">
+            <div class="logo">
+                <a href="{% base_url %}">
+                    <img src="{% static 'images/logo.svg' %}" alt="Logo">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    {% for block in page.content %}
+                        {% if block.value.navigation_title %}
+                        <li>
+                            <a href="#section-{{ block.value.navigation_title|slugify }}">
+                                {{ block.value.navigation_title }}
+                            </a>
+                        </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+            {% include_block page.content %}
+        </div>
+    </div>
 {% endblock %}

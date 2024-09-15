@@ -1,1 +1,5 @@
+@import "utils/variables.css";
+
 @import "utils/reset.css";
+
+@import "partials/layout.css";
