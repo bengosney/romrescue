@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags static custom_urls %}
+{% load wagtailcore_tags static custom_urls math %}
 
 {% block body_class %}template-homepage{% endblock %}
 
@@ -28,6 +28,10 @@
         </div>
         <div class="content">
             {% include_block page.content %}
+            <footer>
+                <div>SOS Romanian Rescue &copy;{% now "Y" %} | All Rights Reserved</div>
+                <div>Charity Number : 1160999</div>
+            </footer>
         </div>
     </div>
 {% endblock %}

@@ -22,7 +22,6 @@
           width: 100%;
           max-height: 15vh;
           max-width: 13vw;
-          min-width: 100px;
         }
       }
     }
@@ -37,6 +36,9 @@
         text-decoration: none;
         display: block;
         padding-left: 3vw;
+      }
+
+      li {
         &::after {
           content: "";
           display: block;
@@ -62,31 +64,31 @@
     }
   }
 
+  /* prettier-ignore */
+  .content {
+    /*[[[cog
+    import cog
+    for i in range(1,7):
+        cog.outl(f".block-Section:nth-child({i}n) {{ background-color: var(--color-pallet-{i}); }}")
+    ]]]*/
+    .block-Section:nth-child(1n) { background-color: var(--color-pallet-1); }
+    .block-Section:nth-child(2n) { background-color: var(--color-pallet-2); }
+    .block-Section:nth-child(3n) { background-color: var(--color-pallet-3); }
+    .block-Section:nth-child(4n) { background-color: var(--color-pallet-4); }
+    .block-Section:nth-child(5n) { background-color: var(--color-pallet-5); }
+    .block-Section:nth-child(6n) { background-color: var(--color-pallet-6); }
+    /*[[[end]]] (checksum: df70a98abdc9ee16e6693b8755155dce)*/
+  }
+
   .content {
     flex: 1;
     height: 100vh;
     overflow-y: scroll;
 
     .block-Section {
-      + .block-Section {
-        background-color: var(--color-pallet-2);
-        + .block-Section {
-          background-color: var(--color-pallet-3);
-          + .block-Section {
-            background-color: var(--color-pallet-4);
-            + .block-Section {
-              background-color: var(--color-pallet-5);
-              + .block-Section {
-                background-color: var(--color-pallet-6);
-              }
-            }
-          }
-        }
-      }
-
       & > section {
         min-height: 100vh;
-        padding: 1rem;
+        padding: clamp(1rem, 5vw, 3rem);
         display: flex;
         align-items: center;
       }
