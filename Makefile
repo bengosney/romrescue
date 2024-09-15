@@ -1,4 +1,4 @@
-.PHONY: help clean test install all init css assets watch
+.PHONY: help clean test install all init css js assets watch
 .DEFAULT_GOAL := install
 .PRECIOUS: requirements.%.in
 
@@ -15,6 +15,10 @@ PRE_COMMIT_PATH:=.direnv/python-$(PYTHON_VERSION)/bin/pre-commit
 CSS_INPUTS:=$(wildcard assets/css/*.css)
 CSS_OUTPUTS:=$(patsubst assets/css/%.css,romrescue/static/css/%.min.css,$(CSS_INPUTS))
 ALL_CSS:=$(shell find assets/css -type f -name '*.css')
+
+JS_INPUTS:=$(wildcard assets/js/*.ts)
+JS_OUTPUTS:=$(patsubst assets/js/%.ts,romrescue/static/js/%.min.js,$(JS_INPUTS))
+ALL_JS:=$(shell find assets/js -type f -name '*.ts')
 
 COG_FILES:=$(shell find assets/css -type f -name '*.css' -exec grep -l "\[\[\[cog" {} \;)
 
@@ -91,7 +95,12 @@ romrescue/static/css/%.min.css: assets/css/%.css $(ALL_CSS)
 
 css: $(CSS_OUTPUTS)
 
-assets: css ## Build assets
+romrescue/static/js/%.min.js: assets/js/%.ts $(ALL_JS)
+	npx esbuild $< --bundle --minify --outfile=$@
+
+js: $(JS_OUTPUTS)
+
+assets: css js ## Build assets
 
 install: installpython node_modules
 
