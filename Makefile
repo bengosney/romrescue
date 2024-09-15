@@ -16,6 +16,8 @@ CSS_INPUTS:=$(wildcard assets/css/*.css)
 CSS_OUTPUTS:=$(patsubst assets/css/%.css,romrescue/static/css/%.min.css,$(CSS_INPUTS))
 ALL_CSS:=$(shell find assets/css -type f -name '*.css')
 
+COG_FILES:=$(shell find assets/css -type f -name '*.css' -exec grep -l "\[\[\[cog" {} \;)
+
 help: ## Display this help
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
@@ -102,4 +104,9 @@ watch: ## Watch assets for changes
 	$(MAKE) assets
 	@while inotifywait -qr -e close_write assets; do \
 		$(MAKE) assets; \
+	done
+
+cog: $(COG_FILES)
+	@for file in $^; do \
+		cog -rc $$file; \
 	done

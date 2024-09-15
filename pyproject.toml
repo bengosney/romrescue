@@ -17,6 +17,7 @@ classifiers = [
 dependencies = [ "wagtail" ]
 
 optional-dependencies.dev = [
+  "cogapp",
   "django-browser-reload",
   "django-debug-toolbar",
   "django-extensions",

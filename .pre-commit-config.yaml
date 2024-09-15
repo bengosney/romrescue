@@ -54,3 +54,12 @@ repos:
   - id: prettier
     types_or: [css, javascript]
     exclude: .min.
+- repo: local
+  hooks:
+  - id: cog
+    name: Update css files
+    entry: cog -rc
+    language: system
+    types: [css]
+    exclude: .min.
+    stages: [pre-commit]
