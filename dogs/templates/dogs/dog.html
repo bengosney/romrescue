@@ -1,0 +1,28 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+{% for image in page.images.all %}
+    <div class="lightbox">
+        <input type="checkbox" id="light-box-{{ image.id }}" />
+        <label for="light-box-{{ image.id }}">
+            {% picture image.image format-{avif,webp,jpeg} max-{1980x1080,1024x768,800x600} %}
+        </label>
+    </div>
+{% endfor %}
+
+<div class="slider">
+    {% for image in page.images.all %}
+        <input type="radio" name="slider" id="slide-{{ forloop.counter }}" {% if forloop.first %}checked{% endif %} />
+        <div class="slide slide-{{ forloop.counter }}">
+            <label for="light-box-{{ image.id }}" class="lightbox-opener">
+                {% picture image.image format-{avif,webp,jpeg} fill-150x200 %}
+            </label>
+        </div>
+    {% endfor %}
+    {% if page.images.all|length > 1 %}
+        <div class="slide-nav">
+            {% for image in page.images.all %}
+                <label class="slide-label slide-label-{{ forloop.counter }}" for="slide-{{ forloop.counter }}">&#8226;</label>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
