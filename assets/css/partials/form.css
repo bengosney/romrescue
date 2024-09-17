@@ -1,0 +1,27 @@
+.field-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+
+  + .field-wrapper {
+    margin-top: 1.5em;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.75em 1.25em;
+    border-radius: 0.25em;
+    border: 1px solid #dde3ec;
+    background: #ffffff;
+    font-weight: 500;
+    font-size: 16px;
+    outline: none;
+    resize: none;
+
+    &:active,
+    &:focus {
+      border-color: var(--primary-color);
+    }
+  }
+}
