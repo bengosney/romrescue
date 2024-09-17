@@ -19,14 +19,14 @@
     /*[[[cog
     import cog
     for i in range(1,7):
-        cog.outl(f".block-Section:nth-child({i}n) {{ background-color: var(--color-pallet-{i}); }}")
+        cog.outl(f".block-Section:nth-child({i}n) {{ background-color: hsl(from var(--color-pallet-{i}) h s calc(l + 10)); }}")
     ]]]*/
-    .block-Section:nth-child(1n) { background-color: var(--color-pallet-1); }
-    .block-Section:nth-child(2n) { background-color: var(--color-pallet-2); }
-    .block-Section:nth-child(3n) { background-color: var(--color-pallet-3); }
-    .block-Section:nth-child(4n) { background-color: var(--color-pallet-4); }
-    .block-Section:nth-child(5n) { background-color: var(--color-pallet-5); }
-    .block-Section:nth-child(6n) { background-color: var(--color-pallet-6); }
-    /*[[[end]]] (checksum: df70a98abdc9ee16e6693b8755155dce)*/
+    .block-Section:nth-child(1n) { background-color: hsl(from var(--color-pallet-1) h s calc(l + 10)); }
+    .block-Section:nth-child(2n) { background-color: hsl(from var(--color-pallet-2) h s calc(l + 10)); }
+    .block-Section:nth-child(3n) { background-color: hsl(from var(--color-pallet-3) h s calc(l + 10)); }
+    .block-Section:nth-child(4n) { background-color: hsl(from var(--color-pallet-4) h s calc(l + 10)); }
+    .block-Section:nth-child(5n) { background-color: hsl(from var(--color-pallet-5) h s calc(l + 10)); }
+    .block-Section:nth-child(6n) { background-color: hsl(from var(--color-pallet-6) h s calc(l + 10)); }
+    /*[[[end]]] (checksum: 6b237d20a3990d1b99ae365d5fdace8e)*/
   }
 }
