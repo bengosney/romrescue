@@ -1,0 +1,91 @@
+:root {
+  --base-size: 1.15rem;
+  --h1-size: 1.998rem;
+  --h2-size: 2.627rem;
+  --h3-size: 1.999rem;
+  --h4-size: 1.414rem;
+
+  --font-family: system-ui, -apple-system, blinkmacsystemfont, "Segoe UI",
+    helvetica, arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+
+  --font-heading: var(--font-family);
+}
+
+html,
+body,
+p,
+h1,
+h2,
+h3,
+h4 {
+  color: var(--text-colour);
+}
+
+html {
+  font-size: 1em;
+}
+
+body {
+  font-family: var(--font-family);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+p,
+li {
+  line-height: 1.5em;
+  font-size: var(--base-size);
+  letter-spacing: 0.005em;
+}
+
+p {
+  margin-bottom: 1.3em;
+}
+
+li {
+  + li {
+    margin-top: 0.75em;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  margin: 0 0 0.75em;
+  font-weight: inherit;
+  line-height: 1.25;
+  color: var(---color-primary-0);
+
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  hyphenate-limit-chars: 10 3 4;
+
+  &.alt {
+    font-family: var(--font-family);
+  }
+}
+
+h1 {
+  font-size: var(--h1-size);
+}
+
+h2 {
+  font-size: var(--h2-size);
+}
+
+h3 {
+  font-size: var(--h3-size);
+}
+
+h4 {
+  font-size: var(--h4-size);
+}
+
+small,
+.font_small {
+  font-size: 0.707em;
+}

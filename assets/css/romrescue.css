@@ -2,6 +2,8 @@
 
 @import "utils/reset.css";
 
+@import "partials/typography.css";
+
 @import "partials/layout.css";
 @import "partials/nav.css";
 @import "partials/footer.css";

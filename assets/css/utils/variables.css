@@ -1,4 +1,6 @@
 :root {
+  --text-colour: rgb(42, 42, 42);
+
   --color-primary: #9c539c;
   --color-secondary: #ddb7dd;
   --color-background: #9c539c;
