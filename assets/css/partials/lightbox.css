@@ -9,7 +9,7 @@
 
   label {
     display: flex;
-    z-index: 10;
+    z-index: 200;
     position: fixed;
     top: 0;
     left: 0;
