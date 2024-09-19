@@ -1,6 +1,7 @@
 .block-Dogs {
   ul {
-    margin: 0 calc(var(--section-padding) * -1);
+    margin: calc(var(--section-padding-v) * -1)
+      calc(var(--section-padding-h) * -1);
     padding: 0;
 
     li {

@@ -15,5 +15,6 @@
 
   --nav-width: 17rem;
 
-  --section-padding: 2rem;
+  --section-padding-h: 2rem;
+  --section-padding-v: clamp(2rem, 6vh, 5rem);
 }

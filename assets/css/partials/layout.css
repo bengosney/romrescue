@@ -5,8 +5,10 @@
 
     .block-Section {
       & > section {
-        min-height: 100vh;
-        padding: var(--section-padding);
+        &:has(.block-SiteTitle) {
+          min-height: 100vh;
+        }
+        padding: var(--section-padding-v) var(--section-padding-h);
         display: flex;
         align-items: center;
 
@@ -17,7 +19,6 @@
 
       &:has(.block-Dogs) {
         & > section {
-          min-height: auto;
         }
       }
 
