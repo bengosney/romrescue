@@ -17,7 +17,7 @@
                     {% for block in page.content %}
                         {% if block.value.navigation_title %}
                         <li>
-                            <a href="#section-{{ block.value.navigation_title|slugify }}">
+                            <a href="#{{ block.value.navigation_title|slugify }}" {% if forloop.first %}class="active"{% endif %}>
                                 {{ block.value.navigation_title }}
                             </a>
                         </li>

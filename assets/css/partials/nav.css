@@ -40,9 +40,14 @@
     }
 
     a {
-      color: var(--color-foreground);
+      color: hsl(from var(--color-foreground) h s calc(l - 15));
       text-decoration: none;
       display: block;
+      transition: all 0.2s ease-in-out;
+
+      &.active {
+        color: var(--color-foreground);
+      }
     }
 
     li {
