@@ -41,6 +41,10 @@ li {
 
 p {
   margin-bottom: 1.3em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 li {
