@@ -26,6 +26,12 @@
   }
 }
 
-#form-thank-you {
+#form-thank-you:not(.is-replaced) {
   min-height: 100vh;
+}
+
+#form-thank-you.is-replaced {
+  .back-button {
+    display: none;
+  }
 }
