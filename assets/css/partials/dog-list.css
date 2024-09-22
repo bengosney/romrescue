@@ -1,4 +1,6 @@
 .block-Dogs {
+  container-type: inline-size;
+
   ul {
     margin: calc(var(--section-padding-v) * -1)
       calc(var(--section-padding-h) * -1);
@@ -32,7 +34,19 @@
 
     .images {
       width: 225px;
-      height: 300px;
+      .slider {
+        img {
+          aspect-ratio: 3 / 4;
+          width: 100%;
+          height: auto;
+          display: block;
+          padding: 0;
+          margin: 0;
+        }
+        .mobile {
+          display: none;
+        }
+      }
     }
 
     .info {
@@ -95,6 +109,34 @@
         @supports not selector(::-webkit-scrollbar) {
           & {
             scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+          }
+        }
+      }
+    }
+
+    @container (max-width: 500px) {
+      flex-direction: column;
+      gap: 1em;
+
+      .images {
+        width: 100%;
+
+        .slider {
+          .slide {
+            width: 100%;
+          }
+
+          img {
+            aspect-ratio: 4 / 3;
+            width: 100%;
+          }
+
+          .mobile {
+            display: block;
+          }
+
+          .desktop {
+            display: none;
           }
         }
       }

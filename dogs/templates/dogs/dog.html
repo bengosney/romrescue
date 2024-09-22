@@ -16,7 +16,8 @@
                 <input type="radio" name="slider-{{ page.id }}" id="slide-{{ image.id }}" {% if forloop.first %}checked{% endif %} />
                 <div class="slide slide-{{ image.id }}">
                     <label for="light-box-{{ image.id }}" class="lightbox-opener">
-                        {% picture image.image format-{avif,webp,jpeg} fill-225x300 %}
+                        {% picture image.image format-{avif,webp,jpeg} fill-{640x480} class="mobile" %}
+                        {% picture image.image format-{avif,webp,jpeg} fill-{225x300} class="desktop" %}
                     </label>
                 </div>
             {% endfor %}
