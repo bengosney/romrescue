@@ -1,8 +1,17 @@
 footer {
   background-color: var(--color-primary);
   color: var(--color-foreground);
-  padding: 2rem 0;
+  padding: 2rem 1.5rem;
   display: flex;
   justify-content: space-around;
   box-shadow: 0px 0px 13px #000000;
+  flex-wrap: wrap;
+  gap: 0.5em;
+
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 0.5em;
+  }
 }
