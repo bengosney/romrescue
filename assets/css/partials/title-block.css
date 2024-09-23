@@ -1,0 +1,20 @@
+.block-SiteTitle {
+  h1 {
+    display: flex;
+    align-items: center;
+    gap: 0.75em;
+    line-height: 1em;
+  }
+
+  img {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    img {
+      display: inline-block;
+      max-width: 100%;
+      max-height: 10vh;
+    }
+  }
+}
