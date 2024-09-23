@@ -17,6 +17,7 @@ class DogImage(Orderable):
 
 class Dog(Page):
     template = "dogs/dog_preview.html"
+    parent_page_types = ["home.HomePage"]
 
     body = RichTextField()
 
