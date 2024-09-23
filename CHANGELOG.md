@@ -1,3 +1,16 @@
+## 0.3.0 (2024-09-23)
+
+### Feat
+
+- **pages**: limit home pages to 1
+- **pages**: limit dog pages to being created under the home page
+- **preview**: add a simple dog preview
+
+### Fix
+
+- **css**: add the pointer cursors to the nav labels
+- **css**: nav was missing at one width
+
 ## 0.2.0 (2024-09-23)
 
 ### Feat
