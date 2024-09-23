@@ -16,6 +16,8 @@ class FormField(AbstractFormField):
 
 
 class HomePage(AbstractEmailForm):
+    max_count = 1
+
     content = StreamField(
         [
             (
