@@ -1,4 +1,5 @@
 from django.db import models
+from django.http import Http404
 from modelcluster.fields import ParentalKey
 from wagtail.admin.panels import FieldPanel, InlinePanel
 from wagtail.fields import RichTextField
@@ -15,9 +16,14 @@ class DogImage(Orderable):
 
 
 class Dog(Page):
+    template = "dogs/dog_preview.html"
+
     body = RichTextField()
 
     content_panels = Page.content_panels + [
         FieldPanel("body"),
         InlinePanel("images", label="Images"),
     ]
+
+    def serve(self, request):
+        raise Http404()
