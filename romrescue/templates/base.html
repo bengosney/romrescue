@@ -36,6 +36,10 @@
 
         {% block content %}{% endblock %}
 
+        <a class="back-to-top" title="Back to top" href="#back-to-top">
+            {% include "icons/back-to-top.svg" %}
+        </a>
+
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/main.min.js' %}"></script>
 

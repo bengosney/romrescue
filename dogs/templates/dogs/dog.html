@@ -24,7 +24,9 @@
             {% if page.images.all|length > 1 %}
                 <div class="slide-nav">
                     {% for image in page.images.all %}
-                        <label class="slide-label slide-label-{{ image.id }}" for="slide-{{ image.id }}">&#8226;</label>
+                        <label class="slide-label slide-label-{{ image.id }}" for="slide-{{ image.id }}">
+                            {% include "icons/selection-dot.svg" %}
+                        </label>
                     {% endfor %}
                 </div>
             {% endif %}

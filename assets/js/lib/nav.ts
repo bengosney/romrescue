@@ -1,18 +1,29 @@
 export const initNav = () => {
-    const anchorLinks = document.querySelectorAll('a[href^="#"]');
-    const firstId = anchorLinks[0]?.getAttribute('href');
+    const anchorLinks: NodeListOf<HTMLAnchorElement> = document.querySelectorAll('a[href^="#"]');
+    const firstId: string | null = anchorLinks[0]?.getAttribute('href');
+    const navToggle: HTMLInputElement|null = document.querySelector('#nav-toggle');
+
     anchorLinks.forEach(anchor => {
         anchor.addEventListener('click', (event) => {
             event.preventDefault();
+            navToggle && (navToggle.checked = false);
             const targetId = anchor.getAttribute('href');
             if (targetId) {
                 const element = document.querySelector(targetId);
                 if (element) {
                     element.scrollIntoView({ behavior: 'smooth' });
-                    const uri = firstId == targetId ? '/' : `${targetId}`;
+                    const uri: string = firstId == targetId ? '/' : `${targetId}`;
                     history.replaceState(undefined, '', uri)
                 }
             }
+        });
+    });
+
+    document.querySelectorAll('.back-to-top').forEach(anchor => {
+        anchor.addEventListener('click', (event) => {
+            event.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            history.replaceState(undefined, '', '/');
         });
     });
 

@@ -25,28 +25,39 @@
 
   .slide-label {
     cursor: pointer;
-    font-size: 2.5em;
-    text-shadow:
-      -1px -1px 0 #fff,
-      1px -1px 0 #fff,
-      -1px 1px 0 #fff,
-      1px 1px 0 #fff;
+    display: inline-block;
+    font-size: 1rem;
+    width: 1em;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
 
     @media (pointer: coarse) {
-      font-size: 4em;
-      letter-spacing: 0.1em;
+      font-size: 1.5em;
+    }
+
+    svg {
+      circle {
+        fill: var(--text-colour);
+      }
+
+      path {
+        fill: #fff;
+      }
     }
   }
 
   .slide-nav {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 0.15em;
+    width: 100%;
     z-index: 1;
-    position: relative;
-    margin-top: -1.5em;
+    position: absolute;
+    bottom: 0.5em;
+    padding: 0 0.5em;
+    gap: 0.5em;
     @media (pointer: coarse) {
-      margin-top: -2em;
+      gap: 0.75em;
     }
   }
 }
@@ -56,36 +67,36 @@
     /*[[[cog
     import cog
     for i in range(1,30):
-        cog.outl(f"input#slide-{i}:checked ~ .slide-nav .slide-label-{i} {{ color: var(--color-primary); }}")
+        cog.outl(f"input#slide-{i}:checked ~ .slide-nav .slide-label-{i} svg circle {{ fill: var(--color-primary); }}")
     ]]]*/
-    input#slide-1:checked ~ .slide-nav .slide-label-1 { color: var(--color-primary); }
-    input#slide-2:checked ~ .slide-nav .slide-label-2 { color: var(--color-primary); }
-    input#slide-3:checked ~ .slide-nav .slide-label-3 { color: var(--color-primary); }
-    input#slide-4:checked ~ .slide-nav .slide-label-4 { color: var(--color-primary); }
-    input#slide-5:checked ~ .slide-nav .slide-label-5 { color: var(--color-primary); }
-    input#slide-6:checked ~ .slide-nav .slide-label-6 { color: var(--color-primary); }
-    input#slide-7:checked ~ .slide-nav .slide-label-7 { color: var(--color-primary); }
-    input#slide-8:checked ~ .slide-nav .slide-label-8 { color: var(--color-primary); }
-    input#slide-9:checked ~ .slide-nav .slide-label-9 { color: var(--color-primary); }
-    input#slide-10:checked ~ .slide-nav .slide-label-10 { color: var(--color-primary); }
-    input#slide-11:checked ~ .slide-nav .slide-label-11 { color: var(--color-primary); }
-    input#slide-12:checked ~ .slide-nav .slide-label-12 { color: var(--color-primary); }
-    input#slide-13:checked ~ .slide-nav .slide-label-13 { color: var(--color-primary); }
-    input#slide-14:checked ~ .slide-nav .slide-label-14 { color: var(--color-primary); }
-    input#slide-15:checked ~ .slide-nav .slide-label-15 { color: var(--color-primary); }
-    input#slide-16:checked ~ .slide-nav .slide-label-16 { color: var(--color-primary); }
-    input#slide-17:checked ~ .slide-nav .slide-label-17 { color: var(--color-primary); }
-    input#slide-18:checked ~ .slide-nav .slide-label-18 { color: var(--color-primary); }
-    input#slide-19:checked ~ .slide-nav .slide-label-19 { color: var(--color-primary); }
-    input#slide-20:checked ~ .slide-nav .slide-label-20 { color: var(--color-primary); }
-    input#slide-21:checked ~ .slide-nav .slide-label-21 { color: var(--color-primary); }
-    input#slide-22:checked ~ .slide-nav .slide-label-22 { color: var(--color-primary); }
-    input#slide-23:checked ~ .slide-nav .slide-label-23 { color: var(--color-primary); }
-    input#slide-24:checked ~ .slide-nav .slide-label-24 { color: var(--color-primary); }
-    input#slide-25:checked ~ .slide-nav .slide-label-25 { color: var(--color-primary); }
-    input#slide-26:checked ~ .slide-nav .slide-label-26 { color: var(--color-primary); }
-    input#slide-27:checked ~ .slide-nav .slide-label-27 { color: var(--color-primary); }
-    input#slide-28:checked ~ .slide-nav .slide-label-28 { color: var(--color-primary); }
-    input#slide-29:checked ~ .slide-nav .slide-label-29 { color: var(--color-primary); }
-    /*[[[end]]] (checksum: 7e23842ff42c9e2f27edbee7be9bd5ed)*/
+    input#slide-1:checked ~ .slide-nav .slide-label-1 svg circle { fill: var(--color-primary); }
+    input#slide-2:checked ~ .slide-nav .slide-label-2 svg circle { fill: var(--color-primary); }
+    input#slide-3:checked ~ .slide-nav .slide-label-3 svg circle { fill: var(--color-primary); }
+    input#slide-4:checked ~ .slide-nav .slide-label-4 svg circle { fill: var(--color-primary); }
+    input#slide-5:checked ~ .slide-nav .slide-label-5 svg circle { fill: var(--color-primary); }
+    input#slide-6:checked ~ .slide-nav .slide-label-6 svg circle { fill: var(--color-primary); }
+    input#slide-7:checked ~ .slide-nav .slide-label-7 svg circle { fill: var(--color-primary); }
+    input#slide-8:checked ~ .slide-nav .slide-label-8 svg circle { fill: var(--color-primary); }
+    input#slide-9:checked ~ .slide-nav .slide-label-9 svg circle { fill: var(--color-primary); }
+    input#slide-10:checked ~ .slide-nav .slide-label-10 svg circle { fill: var(--color-primary); }
+    input#slide-11:checked ~ .slide-nav .slide-label-11 svg circle { fill: var(--color-primary); }
+    input#slide-12:checked ~ .slide-nav .slide-label-12 svg circle { fill: var(--color-primary); }
+    input#slide-13:checked ~ .slide-nav .slide-label-13 svg circle { fill: var(--color-primary); }
+    input#slide-14:checked ~ .slide-nav .slide-label-14 svg circle { fill: var(--color-primary); }
+    input#slide-15:checked ~ .slide-nav .slide-label-15 svg circle { fill: var(--color-primary); }
+    input#slide-16:checked ~ .slide-nav .slide-label-16 svg circle { fill: var(--color-primary); }
+    input#slide-17:checked ~ .slide-nav .slide-label-17 svg circle { fill: var(--color-primary); }
+    input#slide-18:checked ~ .slide-nav .slide-label-18 svg circle { fill: var(--color-primary); }
+    input#slide-19:checked ~ .slide-nav .slide-label-19 svg circle { fill: var(--color-primary); }
+    input#slide-20:checked ~ .slide-nav .slide-label-20 svg circle { fill: var(--color-primary); }
+    input#slide-21:checked ~ .slide-nav .slide-label-21 svg circle { fill: var(--color-primary); }
+    input#slide-22:checked ~ .slide-nav .slide-label-22 svg circle { fill: var(--color-primary); }
+    input#slide-23:checked ~ .slide-nav .slide-label-23 svg circle { fill: var(--color-primary); }
+    input#slide-24:checked ~ .slide-nav .slide-label-24 svg circle { fill: var(--color-primary); }
+    input#slide-25:checked ~ .slide-nav .slide-label-25 svg circle { fill: var(--color-primary); }
+    input#slide-26:checked ~ .slide-nav .slide-label-26 svg circle { fill: var(--color-primary); }
+    input#slide-27:checked ~ .slide-nav .slide-label-27 svg circle { fill: var(--color-primary); }
+    input#slide-28:checked ~ .slide-nav .slide-label-28 svg circle { fill: var(--color-primary); }
+    input#slide-29:checked ~ .slide-nav .slide-label-29 svg circle { fill: var(--color-primary); }
+    /*[[[end]]] (checksum: a78ddbb7c28d1bab72508dd23e14d2ba)*/
 }
