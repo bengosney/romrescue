@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load wagtailcore_tags static custom_urls %}
+{% load custom_urls static wagtailcore_tags %}
 
 {% block body_class %}template-homepage{% endblock %}
 
@@ -41,7 +41,7 @@
             </label>
             {% block page_content %}
                 {% include_block page.content %}
-            {% endblock %}
+            {% endblock page_content %}
             <footer>
                 <div>
                     <span>SOS Romanian Rescue &copy;{% now "Y" %}</span>
@@ -51,4 +51,4 @@
             </footer>
         </div>
     </div>
-{% endblock %}
+{% endblock content %}
