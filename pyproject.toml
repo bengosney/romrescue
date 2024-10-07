@@ -18,6 +18,7 @@ dependencies = [ "opencv-python", "wagtail" ]
 
 optional-dependencies.dev = [
   "cogapp",
+  "commitizen",
   "django-browser-reload",
   "django-debug-toolbar",
   "django-extensions",

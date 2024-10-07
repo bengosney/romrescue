@@ -31,12 +31,12 @@ help: ## Display this help
 .git: .gitignore
 	git init
 
-.pre-commit-config.yaml: $(PRE_COMMIT_PATH) .git
+.pre-commit-config.yaml: | $(PRE_COMMIT_PATH) .git
 	curl https://gist.githubusercontent.com/bengosney/4b1f1ab7012380f7e9b9d1d668626143/raw/.pre-commit-config.yaml > $@
 	pre-commit autoupdate
 	@touch $@
 
-pyproject.toml: $(UV_PATH)
+pyproject.toml: | $(UV_PATH)
 	curl https://gist.githubusercontent.com/bengosney/f703f25921628136f78449c32d37fcb5/raw/pyproject.toml > $@
 	$(UV_PATH) pip install toml
 	@touch $@
@@ -63,14 +63,15 @@ requirements.txt: $(UV_PATH) pyproject.toml
 
 $(UV_PATH): $(PIP_PATH) $(WHEEL_PATH)
 	python -m pip install uv
+	@touch $@
 
 $(PIP_PATH): .direnv
-	python -m ensurepip
 	python -m pip install --upgrade pip
 	@touch $@
 
 $(WHEEL_PATH): $(PIP_PATH)
 	python -m pip install wheel
+	@touch $@
 
 $(PRE_COMMIT_PATH): $(UV_PATH)
 	$(UV_PATH) pip install pre-commit
