@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% load custom_urls static wagtailcore_tags %}
+
+{% block content %}
+    <div class="block-Dogs">
+    {% include "dogs/dog.html" %}
+    </div>
+{% endblock content %}

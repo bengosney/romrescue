@@ -1,0 +1,14 @@
+@import "utils/variables.css";
+
+@import "utils/reset.css";
+
+@import "partials/typography.css";
+
+@import "partials/layout.css";
+@import "partials/nav.css";
+@import "partials/footer.css";
+@import "partials/form.css";
+@import "partials/dog-list.css";
+@import "partials/slider.css";
+@import "partials/lightbox.css";
+@import "partials/title-block.css";

@@ -1,5 +1,7 @@
 <ul>
     {% for dog in dogs %}
-        <li>{{ dog.title }}</li>
+        <li>
+            {% include "dogs/dog.html" with page=dog %}
+        </li>
     {% endfor %}
 </ul>

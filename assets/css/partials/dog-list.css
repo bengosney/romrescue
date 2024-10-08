@@ -1,0 +1,161 @@
+.block-Dogs {
+  container-type: inline-size;
+
+  ul {
+    margin: calc(var(--section-padding-v) * -1)
+      calc(var(--section-padding-h) * -1);
+    padding: 0;
+
+    li {
+      list-style: none;
+      background-color: var(--background-color);
+      padding: 0;
+      margin-top: 0;
+
+      --sb-track-color: hsl(from var(--background-color) h s calc(l + 10));
+      --sb-thumb-color: hsl(from var(--background-color) h s calc(l - 10));
+      --sb-size: 0.5em;
+      --sb-radius: 0.2em;
+
+      & + li {
+        padding: 0;
+        margin-top: 0;
+        border-top: 1em solid #fff;
+      }
+    }
+  }
+
+  .dog {
+    display: flex;
+
+    & h2 {
+      font-size: var(--h3-size);
+    }
+
+    .images {
+      width: 225px;
+      .slider {
+        img {
+          aspect-ratio: 3 / 4;
+          width: 100%;
+          height: auto;
+          display: block;
+          padding: 0;
+          margin: 0;
+        }
+        .mobile {
+          display: none;
+        }
+      }
+    }
+
+    .info {
+      flex: 1;
+      padding: 1em;
+      height: 300px;
+
+      display: flex;
+      flex-direction: column;
+
+      & > div {
+        padding-right: 0.5em;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        overflow-scrolling: touch;
+
+        background:
+              /* Shadow Cover TOP */
+          linear-gradient(var(--background-color) 30%, rgba(255, 255, 255, 0))
+            center top,
+          /* Shadow Cover BOTTOM */
+            linear-gradient(rgba(255, 255, 255, 0), var(--background-color) 70%)
+            center bottom,
+          /* Shadow TOP */
+            radial-gradient(
+              farthest-side at 50% 0,
+              rgba(0, 0, 0, 0.2),
+              rgba(0, 0, 0, 0)
+            )
+            center top,
+          /* Shadow BOTTOM */
+            radial-gradient(
+              farthest-side at 50% 100%,
+              rgba(0, 0, 0, 0.2),
+              rgba(0, 0, 0, 0)
+            )
+            center bottom;
+
+        background-repeat: no-repeat;
+        background-size:
+          100% 40px,
+          100% 40px,
+          100% 14px,
+          100% 14px;
+        background-attachment: local, local, scroll, scroll;
+
+        &::-webkit-scrollbar {
+          width: var(--sb-size);
+        }
+
+        &::-webkit-scrollbar-track {
+          background: var(--sb-track-color);
+          border-radius: var(--sb-radius);
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: var(--sb-thumb-color);
+          border-radius: var(--sb-radius);
+        }
+
+        @supports not selector(::-webkit-scrollbar) {
+          & {
+            scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+          }
+        }
+      }
+    }
+
+    @container (max-width: 576px) {
+      flex-direction: column;
+      gap: 1em;
+
+      .images {
+        width: 100%;
+
+        .slider {
+          .slide {
+            width: 100%;
+          }
+
+          img {
+            aspect-ratio: 4 / 3;
+            width: 100%;
+          }
+
+          .mobile {
+            display: block;
+          }
+
+          .desktop {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* prettier-ignore */
+.block-Dogs {
+    /*[[[cog
+    import cog
+    for i in range(1,6):
+        cog.outl(f"li:nth-child({i}n) {{ --background-color: hsl(from var(--color-pallet-{i+1}) h s calc(l + 10)); }}")
+    ]]]*/
+    li:nth-child(1n) { --background-color: hsl(from var(--color-pallet-2) h s calc(l + 10)); }
+    li:nth-child(2n) { --background-color: hsl(from var(--color-pallet-3) h s calc(l + 10)); }
+    li:nth-child(3n) { --background-color: hsl(from var(--color-pallet-4) h s calc(l + 10)); }
+    li:nth-child(4n) { --background-color: hsl(from var(--color-pallet-5) h s calc(l + 10)); }
+    li:nth-child(5n) { --background-color: hsl(from var(--color-pallet-6) h s calc(l + 10)); }
+    /*[[[end]]] (checksum: 46da2794fb1c4185545b14b52b392d98)*/
+  }

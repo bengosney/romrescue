@@ -1,0 +1,14 @@
+{% extends "home/home_page.html" %}
+
+{% load custom_urls wagtailcore_tags %}
+
+{% block page_content %}
+    <div class="block-Section">
+        <section id="form-thank-you" data-replaces="#get-in-touch">
+            <div class="block-Form">
+                <div>{{ page.thank_you_text|richtext }}</div>
+                <div class="back-button"><a href="{% base_url %}" class="button">Back</a>
+            </div>
+        </section>
+    </div>
+{% endblock page_content %}

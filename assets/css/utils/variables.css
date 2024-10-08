@@ -1,0 +1,20 @@
+:root {
+  --text-colour: rgb(42, 42, 42);
+
+  --color-primary: #9c539c;
+  --color-secondary: #ddb7dd;
+  --color-background: #9c539c;
+  --color-foreground: #ffffff;
+
+  --color-pallet-1: #ffffff;
+  --color-pallet-2: #d55e91;
+  --color-pallet-3: #fd767e;
+  --color-pallet-4: #ff9d69;
+  --color-pallet-5: #ffca60;
+  --color-pallet-6: #f9f871;
+
+  --nav-width: 17rem;
+
+  --section-padding-h: 2rem;
+  --section-padding-v: clamp(2rem, 10vh, 7rem);
+}

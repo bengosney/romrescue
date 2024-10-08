@@ -1,0 +1,41 @@
+{% load wagtailcore_tags wagtailimages_tags %}
+
+<div class="dog">
+    <div class="images">
+        {% for image in page.images.all %}
+            <div class="lightbox">
+                <input type="checkbox" id="light-box-{{ image.id }}" />
+                <label for="light-box-{{ image.id }}">
+                    {% picture image.image format-{avif,webp,jpeg} max-{1980x1080,1024x768,800x600} %}
+                </label>
+            </div>
+        {% endfor %}
+
+        <div class="slider">
+            {% for image in page.images.all %}
+                <input type="radio" name="slider-{{ page.id }}" id="slide-{{ image.id }}" {% if forloop.first %}checked{% endif %} />
+                <div class="slide slide-{{ image.id }}">
+                    <label for="light-box-{{ image.id }}" class="lightbox-opener">
+                        {% picture image.image format-{avif,webp,jpeg} fill-{640x480} class="mobile" %}
+                        {% picture image.image format-{avif,webp,jpeg} fill-{225x300} class="desktop" %}
+                    </label>
+                </div>
+            {% endfor %}
+            {% if page.images.all|length > 1 %}
+                <div class="slide-nav">
+                    {% for image in page.images.all %}
+                        <label class="slide-label slide-label-{{ image.id }}" for="slide-{{ image.id }}">
+                            {% include "icons/selection-dot.svg" %}
+                        </label>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    <div class="info">
+        <h2>{{ page.title }}</h2>
+        <div>
+            {{ page.body|richtext }}
+        </div>
+    </div>
+</div>

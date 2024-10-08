@@ -15,3 +15,14 @@ class SectionBlock(blocks.StructBlock):
             body = blocks.StreamBlock(local_blocks)
             body.set_name("body")
             self.child_blocks["body"] = body
+
+
+class TitleBlock(blocks.StaticBlock):
+    class Meta:
+        template = "home/blocks/title_block.html"
+
+
+class FormBlock(blocks.StructBlock):
+    class Meta:
+        template = "home/blocks/form.html"
+        icon = "form"

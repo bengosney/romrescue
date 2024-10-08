@@ -1,0 +1,102 @@
+.slider {
+  position: relative;
+
+  input[type="radio"] {
+    display: none;
+  }
+
+  .slide {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease-in-out;
+
+    &:nth-of-type(1) {
+      position: relative;
+    }
+  }
+
+  input:checked + .slide {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .slide-label {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1rem;
+    width: 1em;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+
+    @media (pointer: coarse) {
+      font-size: 1.5em;
+    }
+
+    svg {
+      circle {
+        fill: var(--text-colour);
+      }
+
+      path {
+        fill: #fff;
+      }
+    }
+  }
+
+  .slide-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    bottom: 0.5em;
+    padding: 0 0.5em;
+    gap: 0.5em;
+    @media (pointer: coarse) {
+      gap: 0.75em;
+    }
+  }
+}
+
+/* prettier-ignore */
+.slider {
+    /*[[[cog
+    import cog
+    for i in range(1,30):
+        cog.outl(f"input#slide-{i}:checked ~ .slide-nav .slide-label-{i} svg circle {{ fill: var(--color-primary); }}")
+    ]]]*/
+    input#slide-1:checked ~ .slide-nav .slide-label-1 svg circle { fill: var(--color-primary); }
+    input#slide-2:checked ~ .slide-nav .slide-label-2 svg circle { fill: var(--color-primary); }
+    input#slide-3:checked ~ .slide-nav .slide-label-3 svg circle { fill: var(--color-primary); }
+    input#slide-4:checked ~ .slide-nav .slide-label-4 svg circle { fill: var(--color-primary); }
+    input#slide-5:checked ~ .slide-nav .slide-label-5 svg circle { fill: var(--color-primary); }
+    input#slide-6:checked ~ .slide-nav .slide-label-6 svg circle { fill: var(--color-primary); }
+    input#slide-7:checked ~ .slide-nav .slide-label-7 svg circle { fill: var(--color-primary); }
+    input#slide-8:checked ~ .slide-nav .slide-label-8 svg circle { fill: var(--color-primary); }
+    input#slide-9:checked ~ .slide-nav .slide-label-9 svg circle { fill: var(--color-primary); }
+    input#slide-10:checked ~ .slide-nav .slide-label-10 svg circle { fill: var(--color-primary); }
+    input#slide-11:checked ~ .slide-nav .slide-label-11 svg circle { fill: var(--color-primary); }
+    input#slide-12:checked ~ .slide-nav .slide-label-12 svg circle { fill: var(--color-primary); }
+    input#slide-13:checked ~ .slide-nav .slide-label-13 svg circle { fill: var(--color-primary); }
+    input#slide-14:checked ~ .slide-nav .slide-label-14 svg circle { fill: var(--color-primary); }
+    input#slide-15:checked ~ .slide-nav .slide-label-15 svg circle { fill: var(--color-primary); }
+    input#slide-16:checked ~ .slide-nav .slide-label-16 svg circle { fill: var(--color-primary); }
+    input#slide-17:checked ~ .slide-nav .slide-label-17 svg circle { fill: var(--color-primary); }
+    input#slide-18:checked ~ .slide-nav .slide-label-18 svg circle { fill: var(--color-primary); }
+    input#slide-19:checked ~ .slide-nav .slide-label-19 svg circle { fill: var(--color-primary); }
+    input#slide-20:checked ~ .slide-nav .slide-label-20 svg circle { fill: var(--color-primary); }
+    input#slide-21:checked ~ .slide-nav .slide-label-21 svg circle { fill: var(--color-primary); }
+    input#slide-22:checked ~ .slide-nav .slide-label-22 svg circle { fill: var(--color-primary); }
+    input#slide-23:checked ~ .slide-nav .slide-label-23 svg circle { fill: var(--color-primary); }
+    input#slide-24:checked ~ .slide-nav .slide-label-24 svg circle { fill: var(--color-primary); }
+    input#slide-25:checked ~ .slide-nav .slide-label-25 svg circle { fill: var(--color-primary); }
+    input#slide-26:checked ~ .slide-nav .slide-label-26 svg circle { fill: var(--color-primary); }
+    input#slide-27:checked ~ .slide-nav .slide-label-27 svg circle { fill: var(--color-primary); }
+    input#slide-28:checked ~ .slide-nav .slide-label-28 svg circle { fill: var(--color-primary); }
+    input#slide-29:checked ~ .slide-nav .slide-label-29 svg circle { fill: var(--color-primary); }
+    /*[[[end]]] (checksum: a78ddbb7c28d1bab72508dd23e14d2ba)*/
+}
